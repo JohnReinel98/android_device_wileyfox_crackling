@@ -12,15 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+TARGET_BOOT_ANIMATION_RES := 720
+
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Include AquariOS telephony configuration
-$(call inherit-product, vendor/aquarios/configs/aquarios_phone.mk)
+include vendor/pa/main.mk
+
+include device/qcom/common/common.mk
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := aosp_crackling
+PRODUCT_NAME := pa_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
