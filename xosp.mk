@@ -12,18 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TARGET_BOOT_ANIMATION_RES := 720
-
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-include vendor/pa/main.mk
-
-include device/qcom/common/common.mk
+# Inherit some common XOSP stuff.
+$(call inherit-product, vendor/xosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/xosp/config/xosp.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := pa_crackling
+PRODUCT_NAME := xosp_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
@@ -40,3 +38,6 @@ TARGET_VENDOR_DEVICE_NAME := crackling
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Wileyfox/Swift/crackling:7.1.1/N6F26Y/5506d7d322:user/release-keys \
     PRIVATE_BUILD_DESC="crackling-user 7.1.1 N6F26Y 5506d7d322 release-keys"
+	
+ROOT_METHOD := magisk
+USE_CHROMIUM := true
