@@ -14,16 +14,13 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Device overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/to/product/wileyfox/crackling/overlay
-
-# Inherit some common OctOS stuff.
-$(call inherit-product, vendor/to/config/common_full_phone.mk)
+# Inherit some common Viper stuff.
+$(call inherit-product, vendor/viper/config/common_full_phone.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := to_crackling
+PRODUCT_NAME := viper_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
