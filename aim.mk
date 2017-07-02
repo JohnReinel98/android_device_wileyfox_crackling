@@ -12,19 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
-
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Inherit some common NOS stuff.
-$(call inherit-product, vendor/nitrogen/products/common.mk)
+# Inherit some common AIM stuff.
+$(call inherit-product, vendor/aim/config/common_full_phone.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := nitrogen_crackling
+PRODUCT_NAME := aim_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
@@ -41,3 +37,8 @@ TARGET_VENDOR_DEVICE_NAME := crackling
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Wileyfox/Swift/crackling:7.1.1/N6F26Y/5506d7d322:user/release-keys \
     PRIVATE_BUILD_DESC="crackling-user 7.1.1 N6F26Y 5506d7d322 release-keys"
+
+PRODUCT_PROPERTY_OVERRIDES += /
+ro.aim.maintainer=John Reinel (addictz10,Unofficial)
+
+WITH_SU=false
