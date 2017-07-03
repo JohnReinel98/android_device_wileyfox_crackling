@@ -14,13 +14,16 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Inherit some common CosmicOS stuff.
-$(call inherit-product, vendor/cos/common.mk)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
+
+# must be before including omni part
+TARGET_BOOTANIMATION_SIZE := 640x362
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := cos_crackling
+PRODUCT_NAME := omni_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
