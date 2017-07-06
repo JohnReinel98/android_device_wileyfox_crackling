@@ -17,6 +17,9 @@
 # Inherit from msm8916-common
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
 
+# Use specific resolution for bootanimation
+SMALL_BOOTANIMATION_SIZE := 720x720
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 

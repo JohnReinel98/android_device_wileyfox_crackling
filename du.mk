@@ -14,13 +14,13 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Include Screw'd common configuration
-include vendor/screwd/main.mk
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/du/config/common_full_phone.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := screwd_crackling
+PRODUCT_NAME := du_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
