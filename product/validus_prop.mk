@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The Validus Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +14,14 @@
 # limitations under the License.
 #
 
-# Inherit from msm8916-common
-$(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
+# System Properties Needed by ValidusOS
+DEFAULT_ROOT_METHOD := rootless
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-# Include package config fragments
-include $(LOCAL_PATH)/product/*.mk
-
-$(call inherit-product-if-exists, vendor/wileyfox/crackling/crackling-vendor.mk)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.device.chipset=Qualcomm Snapdragon 410 \
+    ro.device.cpu=Quad-core 1.2 GHz Cortex-A53 \
+    ro.device.gpu=Adreno 306 \
+    ro.device.rear_cam=13MP \
+    ro.device.front_cam=5MP \
+    ro.device.screen_res=720 x 1280 \
+    ro.opa.eligible_device=true
