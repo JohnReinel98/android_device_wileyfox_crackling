@@ -14,14 +14,13 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Inherit some common Validus stuff.
-$(call inherit-product, vendor/validus/config/common_full_phone.mk)
-$(call inherit-product, vendor/validus/config/caf_fw.mk)
+# Inherit some common citrus peel.
+$(call inherit-product, vendor/citrus/common.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := validus_crackling
+PRODUCT_NAME := citrus_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
@@ -39,5 +38,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Wileyfox/Swift/crackling:7.1.1/N6F26Y/5506d7d322:user/release-keys \
     PRIVATE_BUILD_DESC="crackling-user 7.1.1 N6F26Y 5506d7d322 release-keys"
 
+# CAF REVISION
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.caf.branch=LA.BR.1.2.9_rb1.14
+
+# Citrus-CAF Crackling Maintainer
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        DEVICE_MAINTAINERS="John Reinel (xda@addictz10, Unofficial)"
+         DEVICE_MAINTAINERS="John Reinel (xda@addictz10, Unofficial)"
