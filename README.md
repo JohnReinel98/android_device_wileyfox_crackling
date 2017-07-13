@@ -1,3 +1,5 @@
+TO THOSE WHO WILL USE MY TREES or CHERRY PICK COMMITS PLEASE GIVE PROPER CREDITS THANKS! CHEERS,
+
 # Device configuration for Wileyfox Swift
 
 ## Spec Sheet
