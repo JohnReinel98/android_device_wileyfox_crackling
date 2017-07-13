@@ -1,1 +1,1 @@
-add_lunch_combo tipsy_crackling-userdebug
+add_lunch_combo tesla_crackling-userdebug
