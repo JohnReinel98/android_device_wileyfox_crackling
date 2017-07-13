@@ -1,1 +1,1 @@
-add_lunch_combo citrus_crackling-userdebug
+add_lunch_combo tipsy_crackling-userdebug
