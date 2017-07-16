@@ -14,16 +14,18 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Inherit some common PixelDust stuff.
-$(call inherit-product, vendor/pixeldust/configs/pixeldust_phone.mk)
+# Inherit Carbon GSM telephony parts
+$(call inherit-product, vendor/carbon/config/gsm.mk)
 
-# Include optional stuff (e.g. prebuilt apps)
-include vendor/pixeldust/configs/system_optional.mk
+# Inherit Carbon product configuration
+$(call inherit-product, vendor/carbon/config/common.mk)
+
+
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := pixeldust_crackling
+PRODUCT_NAME := carbon_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
@@ -40,3 +42,6 @@ TARGET_VENDOR_DEVICE_NAME := crackling
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Wileyfox/Swift/crackling:7.1.1/N6F26Y/5506d7d322:user/release-keys \
     PRIVATE_BUILD_DESC="crackling-user 7.1.1 N6F26Y 5506d7d322 release-keys"
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carbon.maintainer="John Reinel (xda@addictz10, Unofficial)"
