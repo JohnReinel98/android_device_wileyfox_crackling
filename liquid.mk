@@ -14,13 +14,13 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Include pure telephony configuration
-include vendor/pure/configs/pure_phone.mk
+# Inherit common product files.
+$(call inherit-product, vendor/liquid/config/common_full_phone.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := aosp_crackling
+PRODUCT_NAME := liquid_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
