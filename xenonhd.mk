@@ -41,4 +41,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="crackling-user 7.1.1 N6F26Y 5506d7d322 release-keys"
 endif
 
-PRODUCT_PROPERTY_OVERRIDES += ro.xenonhd.maintainer=John Reinel (xda@addictz10, Unofficial)
+PRODUCT_PROPERTY_OVERRIDES += ro.xenonhd.maintainer=JohnReinel
