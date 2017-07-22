@@ -14,7 +14,7 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Inherit some common XenonHD stuff.
+# Inherit common product files.
 $(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
 
 # Must define platform variant before including any common things
@@ -22,32 +22,29 @@ TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
 PRODUCT_NAME := xenonhd_crackling
 BOARD_VENDOR := wileyfox
+PRODUCT_DEVICE := crackling
 
 PRODUCT_GMS_CLIENTID_BASE := android-wileyfox
 
 PRODUCT_MANUFACTURER := Wileyfox
+PRODUCT_MODEL := Wileyfox Swift
 
 PRODUCT_BRAND := Wileyfox
 TARGET_VENDOR := wileyfox
 TARGET_VENDOR_PRODUCT_NAME := Swift
 TARGET_VENDOR_DEVICE_NAME := crackling
 
-PRODUCT_PROPERTY_OVERRIDES += ro.xenonhd.maintainer=Lordhmen
-
-PRODUCT_PACKAGES += \
-    AdAway \
-    KernelAdiutor \
-    MiXplorer
-
-# Root options
-ROOT_METHOD=magisk
-
-# Assert
-TARGET_OTA_ASSERT_DEVICE := crackling
-
 # Use the latest approved GMS identifiers unless running a signed build
 ifneq ($(SIGN_BUILD),true)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Wileyfox/Swift/crackling:7.1.1/N6F26Y/5506d7d322:user/release-keys \
     PRIVATE_BUILD_DESC="crackling-user 7.1.1 N6F26Y 5506d7d322 release-keys"
-endif	
+endif
+
+# Root options
+ROOT_METHOD=magisk
+
+PRODUCT_PACKAGES += \
+    AdAway
+
+PRODUCT_PROPERTY_OVERRIDES += ro.xenonhd.maintainer=John Reinel (xda@addictz10, Unofficial)
