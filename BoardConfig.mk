@@ -19,5 +19,8 @@ include device/wileyfox/crackling/board/*.mk
 
 TARGET_BOARD_INFO_FILE := device/wileyfox/crackling/board-info.txt
 
+# Root Method
+DEFAULT_ROOT_METHOD := rootless
+
 # inherit from proprietary files
 -include vendor/wileyfox/crackling/BoardConfigVendor.mk
