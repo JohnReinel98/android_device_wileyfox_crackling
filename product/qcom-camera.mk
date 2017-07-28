@@ -1,5 +1,6 @@
 # Camera
 PRODUCT_PACKAGES += \
+    libmm-qcamera \
     camera.msm8916
 
 # Permissions
