@@ -18,9 +18,12 @@
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+#    $(LOCAL_PATH)/overlay-lineage
 
 # Include package config fragments
 include $(LOCAL_PATH)/product/*.mk
 
-$(call inherit-product-if-exists, vendor/wileyfox/crackling/crackling-vendor.mk)
+# Call the proprietary setup
+$(call inherit-product, vendor/wileyfox/crackling/crackling-vendor.mk)

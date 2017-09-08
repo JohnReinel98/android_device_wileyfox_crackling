@@ -3,6 +3,7 @@ PRODUCT_PACKAGES += \
     accelcal \
     AccCalibration \
     sensord \
+	android.hardware.sensors@1.0-impl \
     sensors.msm8916
 
 # Permissions
