@@ -80,6 +80,7 @@ extern const char TO_MODEM[];
 extern const char FROM_MODEM[];
 extern const char TO_AFW[];
 extern const char EXIT_TAG[];
+extern const char ENTRY_TAG[];
 extern const char EXIT_ERROR_TAG[];
 
 /*=============================================================================
