@@ -15,13 +15,16 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Inherit some common AICP stuff.
-$(call inherit-product, vendor/aicp/config/common_full_phone.mk)
+# Inherit some common AEX stuff.
+$(call inherit-product, vendor/aosp/common.mk)
+
+# Include Bootanimation configuration
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := aicp_crackling
+PRODUCT_NAME := aosp_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
@@ -34,15 +37,6 @@ PRODUCT_BRAND := Wileyfox
 TARGET_VENDOR := wileyfox
 TARGET_VENDOR_PRODUCT_NAME := Swift
 TARGET_VENDOR_DEVICE_NAME := crackling
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
--include vendor/aicp/configs/bootanimation.mk
-
-# AICP Device Maintainers
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="John Reinel (xda@addictz10, Unofficial)"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Wileyfox/Swift/crackling:8.0.0/OPR6.170623.012/82d89a0c49:userdebug/test-keys \
