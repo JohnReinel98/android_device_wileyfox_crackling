@@ -1,4 +1,5 @@
 # Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +15,19 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/du/config/common_full_phone.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
+
+# Bootanimation
+TARGET_BOOTANIMATION_SIZE := 720x407
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := du_crackling
+PRODUCT_NAME := omni_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
@@ -35,5 +42,5 @@ TARGET_VENDOR_PRODUCT_NAME := Swift
 TARGET_VENDOR_DEVICE_NAME := crackling
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=Wileyfox/Swift/crackling:7.1.1/N6F26Y/5506d7d322:user/release-keys \
-    PRIVATE_BUILD_DESC="crackling-user 7.1.1 N6F26Y 5506d7d322 release-keys"
+    BUILD_FINGERPRINT=Wileyfox/Swift/crackling:8.0.0/OPR6.170623.012/82d89a0c49:userdebug/test-keys \
+    PRIVATE_BUILD_DESC="crackling-user 8.0.0 OPR6.170623.012 82d89a0c49 test-keys"
