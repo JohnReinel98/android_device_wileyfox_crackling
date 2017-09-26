@@ -15,13 +15,10 @@
 
 $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := lineage_crackling
+PRODUCT_NAME := aosp_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
 
@@ -34,6 +31,9 @@ PRODUCT_BRAND := Wileyfox
 TARGET_VENDOR := wileyfox
 TARGET_VENDOR_PRODUCT_NAME := Swift
 TARGET_VENDOR_DEVICE_NAME := crackling
+
+PRODUCT_PACKAGES += \
+    Launcher3
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Wileyfox/Swift/crackling:8.0.0/OPR6.170623.012/82d89a0c49:userdebug/test-keys \
