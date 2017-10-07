@@ -896,7 +896,7 @@ int QCameraHeapMemory::getMatchBufIndex(const void *opaque,
  * RETURN     : none
  *==========================================================================*/
 QCameraStreamMemory::QCameraStreamMemory(camera_request_memory getMemory,
-        void* cbCookie,
+		void* cbCookie,
         bool cached,
         QCameraMemoryPool *pool,
         cam_stream_type_t streamType)
@@ -1577,7 +1577,7 @@ QCameraGrallocMemory::QCameraGrallocMemory(camera_request_memory getMemory, void
     mWidth = mHeight = mStride = mScanline = 0;
     mFormat = HAL_PIXEL_FORMAT_YCrCb_420_SP;
     mGetMemory = getMemory;
-    mCallbackCookie = cbCookie;
+	mCallbackCookie = cbCookie;
     for (int i = 0; i < MM_CAMERA_MAX_NUM_FRAMES; i ++) {
         mBufferHandle[i] = NULL;
         mLocalFlag[i] = BUFFER_NOT_OWNED;

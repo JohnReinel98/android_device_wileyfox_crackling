@@ -170,7 +170,7 @@ private:
 class QCameraStreamMemory : public QCameraMemory {
 public:
     QCameraStreamMemory(camera_request_memory getMemory,
-                        void* cbCookie,
+						void* cbCookie,
                         bool cached,
                         QCameraMemoryPool *pool = NULL,
                         cam_stream_type_t streamType = CAM_STREAM_TYPE_DEFAULT);
@@ -187,7 +187,7 @@ public:
 
 protected:
     camera_request_memory mGetMemory;
-    void* mCallbackCookie;
+	void* mCallbackCookie;
     camera_memory_t *mCameraMemory[MM_CAMERA_MAX_NUM_FRAMES];
 };
 
@@ -257,7 +257,7 @@ private:
     preview_stream_ops_t *mWindow;
     int mWidth, mHeight, mFormat, mStride, mScanline, mMaxFPS;
     camera_request_memory mGetMemory;
-    void* mCallbackCookie;
+	void* mCallbackCookie;
     camera_memory_t *mCameraMemory[MM_CAMERA_MAX_NUM_FRAMES];
     int mMinUndequeuedBuffers;
 };

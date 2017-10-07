@@ -1,4 +1,5 @@
 # Device configuration for Wileyfox Swift
+# If you're using my trees please include me (ProtoHype98) in your credits. Thanks!
 
 ## Spec Sheet
 

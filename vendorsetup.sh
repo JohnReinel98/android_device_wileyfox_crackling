@@ -1,3 +1,0 @@
-add_lunch_combo aosp_crackling-eng
-add_lunch_combo aosp_crackling-user
-add_lunch_combo aosp_crackling-userdebug
